@@ -9,21 +9,36 @@
         android:id="@+id/worListFragment"
         android:name="com.swetajain.viewbindingwithrecyclerview.WorListFragment"
         android:label="Add new Word"
-        tools:layout="@layout/fragment_wor_list" >
-        <action
-            android:id="@+id/action_worListFragment_to_mainFragment"
-            app:destination="@id/mainFragment" />
+        tools:layout="@layout/fragment_wor_list">
         <argument
             android:name="word"
             app:argType="com.swetajain.viewbindingwithrecyclerview.models.Word" />
+        <action
+            android:id="@+id/action_worListFragment_to_detailsFragment"
+            app:destination="@id/detailsFragment" />
+        <action
+            android:id="@+id/action_worListFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
     </fragment>
     <fragment
         android:id="@+id/mainFragment"
         android:name="com.swetajain.viewbindingwithrecyclerview.MainFragment"
         android:label="Word List"
-        tools:layout="@layout/fragment_main" >
+        tools:layout="@layout/fragment_main">
         <action
             android:id="@+id/action_mainFragment_to_worListFragment"
             app:destination="@id/worListFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailsFragment"
+        android:name="com.swetajain.viewbindingwithrecyclerview.DetailsFragment"
+        android:label="fragment_details"
+        tools:layout="@layout/fragment_details">
+        <action
+            android:id="@+id/action_detailsFragment_to_worListFragment"
+            app:destination="@id/worListFragment" />
+        <argument
+            android:name="word"
+            app:argType="com.swetajain.viewbindingwithrecyclerview.models.Word" />
     </fragment>
 </navigation>
