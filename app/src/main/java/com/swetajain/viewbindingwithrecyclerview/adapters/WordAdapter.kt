@@ -22,7 +22,10 @@ class WordAdapter(var wordClickListener: WordClickListener) :
         }
 
         override fun onClick(v: View?) {
-            wordClickListener.onWordClick(adapterPosition)
+            val position = adapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                wordClickListener.onWordClick(adapterPosition)
+            }
         }
 
     }
